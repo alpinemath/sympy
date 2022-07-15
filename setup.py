@@ -423,16 +423,14 @@ with open(os.path.join(dir_setup, 'sympy', 'release.py')) as f:
 
 
 if __name__ == '__main__':
-    setup(name='sympy',
+    setup(name='alpinemath-sympy',
           version=__version__,
-          description='Computer algebra system (CAS) in Python',
-          author='SymPy development team',
-          author_email='sympy@googlegroups.com',
+          description='The Alpine Mathematics fork of SymPy',
+          author='SymPy development team + Alpine Mathematics',
           license='BSD',
           keywords="Math CAS",
-          url='https://sympy.org',
           project_urls={
-              'Source': 'https://github.com/sympy/sympy',
+              'Source': 'https://github.com/alpinemath/sympy',
           },
           py_modules=['isympy'],
           packages=['sympy'] + modules + tests,
@@ -476,6 +474,7 @@ if __name__ == '__main__':
             'Programming Language :: Python :: Implementation :: PyPy',
             ],
           install_requires=[
+            'displaylang>=0.22.7',
             'mpmath>=%s' % min_mpmath_version,
             ],
           **extra_kwargs
